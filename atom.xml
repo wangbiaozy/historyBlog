@@ -4,9 +4,9 @@
   <subtitle>www.github.com/wangbiaozy</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://wangbiaozy.github.io/"/>
+  <link href="http://yoursite.com/"/>
   <updated>2016-12-09T08:17:35.000Z</updated>
-  <id>http://wangbiaozy.github.io/</id>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name>wangbiaozy</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://wangbiaozy.github.io/2016/12/09/hello-world/"/>
-    <id>http://wangbiaozy.github.io/2016/12/09/hello-world/</id>
+    <link href="http://yoursite.com/2016/12/09/hello-world/"/>
+    <id>http://yoursite.com/2016/12/09/hello-world/</id>
     <published>2016-12-09T08:17:35.000Z</published>
     <updated>2016-12-09T08:17:35.000Z</updated>
     
