@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-10T11:39:05.000Z</updated>
+  <updated>2016-12-09T08:17:35.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,25 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>new article</title>
-    <link href="http://yoursite.com/2016/12/10/new-article/"/>
-    <id>http://yoursite.com/2016/12/10/new-article/</id>
-    <published>2016-12-10T11:27:05.000Z</published>
-    <updated>2016-12-10T11:39:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>#<br>你好你好你好<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">abcdefghigk</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;#&lt;br&gt;你好你好你好&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;p
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Hello World</title>
