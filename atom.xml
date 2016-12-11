@@ -42,12 +42,6 @@
       <category term="test" scheme="http://yoursite.com/categories/test/"/>
     
     
-      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
-    
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-      <category term="github" scheme="http://yoursite.com/tags/github/"/>
-    
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
       <category term="css" scheme="http://yoursite.com/tags/css/"/>
@@ -67,6 +61,12 @@
       <category term="bootstrap" scheme="http://yoursite.com/tags/bootstrap/"/>
     
       <category term="less" scheme="http://yoursite.com/tags/less/"/>
+    
+      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="github" scheme="http://yoursite.com/tags/github/"/>
     
   </entry>
   
