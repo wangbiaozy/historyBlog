@@ -5,11 +5,11 @@
     
   <url>
     <loc>http://yoursite.com/2016/12/11/hello-world/</loc>
-    <lastmod>2016-12-11T13:16:07.000Z</lastmod>
+    <lastmod>2016-12-11T13:17:15.000Z</lastmod>
     <data>
         <display>
         <title>Hello World</title>
-        <pubTime>2016-12-11T13:16:07.000Z</pubTime>
+        <pubTime>2016-12-11T13:17:15.000Z</pubTime>
         
         <tag>npm</tag>
          
@@ -40,7 +40,7 @@
          
            
              
-              <breadCrumb title="test, test1, test2, test3" url="http://yoursite.com/categories/test-test1-test2-test3/"/>
+              <breadCrumb title="test" url="http://yoursite.com/categories/test/"/>
           
         </display>
     </data>
