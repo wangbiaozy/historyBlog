@@ -149,11 +149,11 @@ frg = null; //添加之后这个容器就没用了 记得丢掉
       <category term="test" scheme="http://yoursite.com/categories/test/"/>
     
     
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
       <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
       <category term="node" scheme="http://yoursite.com/tags/node/"/>
     
