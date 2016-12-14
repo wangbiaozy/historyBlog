@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[JS中的DOM映射、重绘和回流]]></title>
+      <url>%2F2016%2F12%2F14%2FJS%E4%B8%AD%E7%9A%84DOM%E6%98%A0%E5%B0%84%E3%80%81%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81%2F</url>
+      <content type="text"><![CDATA[先来简单了解下什么是DOM映射、重绘和回流–&gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。 ####为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写在行内) demo *{ margin: 0; padding: 0; } ul{ margin: 30px auto; padding: 10px; border: 3px solid #ccc; list-style: none; } ul li{ margin-bottom: 3px; height: 30px; line-height: 30px; text-align: center; background: lightgreen; } 3 1 4 2 ####js代码如下： var ul = document.getElementById(“list”); var lis = ul.getElementsByTagName(“li”); var lisArr = listToArray(lis);//把lis从类数组转化成数组 console.dir(lisArr); lisArr.sort(function(a,b){ return a.innerHTML - b.innerHTML; //如果是字符串则需要使用localeCompare }); for (var i=0; i]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>%2F2016%2F12%2F11%2Fhello-world%2F</url>
       <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
