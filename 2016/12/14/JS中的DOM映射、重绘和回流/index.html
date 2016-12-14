@@ -86,19 +86,22 @@
 
 
 
-<meta name="description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。  
-####为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写在行内">
+<meta name="description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。 
+　　 
+####为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS中的DOM映射、重绘和回流">
 <meta property="og:url" content="http://yoursite.com/2016/12/14/JS中的DOM映射、重绘和回流/index.html">
 <meta property="og:site_name" content="王彪的个人博客">
-<meta property="og:description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。  
-####为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写在行内">
-<meta property="og:updated_time" content="2016-12-14T05:40:09.000Z">
+<meta property="og:description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。 
+　　 
+####为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写">
+<meta property="og:updated_time" content="2016-12-14T05:43:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS中的DOM映射、重绘和回流">
-<meta name="twitter:description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。  
-####为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写在行内">
+<meta name="twitter:description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。 
+　　 
+####为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写">
 
 
 
@@ -414,21 +417,82 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>　　先来简单了解下什么是DOM映射、重绘和回流–&gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。  </p>
-<p>####为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写在行内)<br>    <html><br>        <head><br>            <title>demo</title><br>            <style><br>                *{<br>                    margin: 0;<br>                    padding: 0;<br>                }<br>                ul{<br>                    margin: 30px auto;<br>                    padding: 10px;<br>                    border: 3px solid #ccc;<br>                    list-style: none;<br>                }<br>                ul li{<br>                    margin-bottom: 3px;<br>                    height: 30px;<br>                    line-height: 30px;<br>                    text-align: center;<br>                    background: lightgreen;<br>                }<br>            </style><br>        </head><br>        <body><br>            <ul><br>                <li>3</li><br>                <li>1</li><br>                <li>4</li><br>                <li>2</li><br>            </ul><br>        </body><br>    </html>        </p>
-<p>####js代码如下：<br>    <script><br>        var ul = document.getElementById(“list”);<br>        var lis = ul.getElementsByTagName(“li”);<br>        var lisArr = listToArray(lis);//把lis从类数组转化成数组<br>        console.dir(lisArr);<br>        lisArr.sort(function(a,b){<br>            return a.innerHTML - b.innerHTML; //如果是字符串则需要使用localeCompare<br>        });<br>        for (var i=0; i<lisArr.length; i++){
-            ul.appendChild(lisArr[i]); //把重新排序好的每一个li添加回页面中
-            lisArr[i].onmouseover = function (){ //鼠标划过每个li改变当前li颜色                this.style.backgroundColor = 'red';
+        <script src="/assets/js/APlayer.min.js"> </script><p>　　先来简单了解下什么是DOM映射、重绘和回流–&gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。 
+　　 </p>
+<p>####为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写在行内)</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;demo&lt;/title&gt;
+        &lt;style&gt;
+            *{
+                margin: 0;
+                padding: 0;
             }
-            lisArr[i].onmouseout = function (){ //鼠标划出当前li变回原来颜色
-                this.style.backgroundColor = 'lightgreen';
+            ul{
+                margin: 30px auto;
+                padding: 10px;
+                border: 3px solid #ccc;
+                list-style: none;
             }
+            ul li{
+                margin-bottom: 3px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                background: lightgreen;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;ul&gt;
+            &lt;li&gt;3&lt;/li&gt;
+            &lt;li&gt;1&lt;/li&gt;
+            &lt;li&gt;4&lt;/li&gt;
+            &lt;li&gt;2&lt;/li&gt;
+        &lt;/ul&gt;        
+    &lt;/body&gt;
+&lt;/html&gt;        
+</code></pre><p>####js代码如下：</p>
+<pre><code>&lt;script&gt;  
+    var ul = document.getElementById(&quot;list&quot;);  
+    var lis = ul.getElementsByTagName(&quot;li&quot;);
+    var lisArr = listToArray(lis);//把lis从类数组转化成数组
+    console.dir(lisArr);
+    lisArr.sort(function(a,b){
+        return a.innerHTML - b.innerHTML; //如果是字符串则需要使用localeCompare
+    });
+    for (var i=0; i&lt;lisArr.length; i++){
+        ul.appendChild(lisArr[i]); //把重新排序好的每一个li添加回页面中
+        lisArr[i].onmouseover = function (){ //鼠标划过每个li改变当前li颜色                this.style.backgroundColor = &apos;red&apos;;
         }
-    </script></p>
-<p>####以上的操作是比较浪费性能的，因为页面内元素的增加、删除或者位置的改变都会引发DOM回流并且li的样式发生过改变引发了DOM重绘（相对于回流来说性能开销很小），那我们该如何处理这个问题呢？在解决这个问题之前我们先用js在页面内增加两个li元素，先来看看第一种方法：<br>    for (var i=1; i&lt;=2; i++){<br>        var li = document.createElement(‘li’);<br>        li.innerHTML = i+4;<br>        ul.appendChild(li); //注意：这行代码执行一次就会引起一次回流 如果循环中的i=10000 就会引起一万次回流…<br>    }</p>
-<p>####再来看看第二种方法：<br>    var str = “”;<br>    for (var i=1; i&lt;=2; i++){<br>        str +=’<li>‘+(i+4)+’</li>‘;<br>    }<br>    ul.innerHTML += str; //这种是先到ul中把html字符串拿来，然后再拼接字符串，最后把拼接好的字符串放到页面内重新渲染。导致了原有的事件属性（onmouseover onmouseout）丢失</p>
-<p>####以上都不是我们想要的结果，那么通过什么样地方式，既能保证原有事件不丢失，还能尽可能少的引起DOM回流呢？如果能提供一个容器，用来存放每次创建的li,最后把这个容器一次放到页面中就会仅仅引起一次回流，让我们来看下该如何实现：<br>    var frg = document.createDocumentFragment(); //这个就是我们需要的容器，叫做文档碎片，专门用来存储DOM元素的<br>    for (var i=1; i&lt;=3; i++){<br>        var li = document.createElement(‘li’);<br>        li.innerHTML = i+4;<br>        frg.appendChild(li);<br>    }<br>    ul.appendChild(frg); //把这个容器中所包含的三个li一次性添加到ul中<br>    frg = null; //添加之后这个容器就没用了 记得丢掉</p>
-<p>####最后总结一下上面三种方法：<br>appendChild：会引起多次回流，但是原有DOM元素的属性不会丢失<br>innerHTML：只有一次回流，但是导致原有DOM元素的属性丢失<br>document.cteateDocumentFragment：只有一次回流并且原有DOM元素的属性不会丢失<br>ps:如果页面内不是追加元素使用innerHTML就可以        </p>
+        lisArr[i].onmouseout = function (){ //鼠标划出当前li变回原来颜色
+            this.style.backgroundColor = &apos;lightgreen&apos;;
+        }
+    }
+&lt;/script&gt;
+</code></pre><p>####以上的操作是比较浪费性能的，因为页面内元素的增加、删除或者位置的改变都会引发DOM回流并且li的样式发生过改变引发了DOM重绘（相对于回流来说性能开销很小），那我们该如何处理这个问题呢？在解决这个问题之前我们先用js在页面内增加两个li元素，先来看看第一种方法：</p>
+<pre><code>for (var i=1; i&lt;=2; i++){
+    var li = document.createElement(&apos;li&apos;);
+    li.innerHTML = i+4;
+    ul.appendChild(li); //注意：这行代码执行一次就会引起一次回流 如果循环中的i=10000 就会引起一万次回流...
+}
+</code></pre><p>####再来看看第二种方法：</p>
+<pre><code>var str = &quot;&quot;;
+for (var i=1; i&lt;=2; i++){
+    str +=&apos;&lt;li&gt;&apos;+(i+4)+&apos;&lt;/li&gt;&apos;;
+}    
+ul.innerHTML += str; //这种是先到ul中把html字符串拿来，然后再拼接字符串，最后把拼接好的字符串放到页面内重新渲染。导致了原有的事件属性（onmouseover onmouseout）丢失
+</code></pre><p>####以上都不是我们想要的结果，那么通过什么样地方式，既能保证原有事件不丢失，还能尽可能少的引起DOM回流呢？如果能提供一个容器，用来存放每次创建的li,最后把这个容器一次放到页面中就会仅仅引起一次回流，让我们来看下该如何实现：</p>
+<pre><code>var frg = document.createDocumentFragment(); //这个就是我们需要的容器，叫做文档碎片，专门用来存储DOM元素的
+for (var i=1; i&lt;=3; i++){
+    var li = document.createElement(&apos;li&apos;);
+    li.innerHTML = i+4;
+    frg.appendChild(li);
+}
+ul.appendChild(frg); //把这个容器中所包含的三个li一次性添加到ul中
+frg = null; //添加之后这个容器就没用了 记得丢掉
+</code></pre><p>####最后总结一下上面三种方法：</p>
+<p>appendChild：会引起多次回流，但是原有DOM元素的属性不会丢失<br>innerHTML：只有一次回流，但是导致原有DOM元素的属性丢失<br>document.cteateDocumentFragment：只有一次回流并且原有DOM元素的属性不会丢失<br>ps:如果页面内不是追加元素使用innerHTML就可以        </p>
 
       
     </div>
