@@ -4,52 +4,8 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/12/11/hello-world/</loc>
-    <lastmod>2016-12-14T07:15:50.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2016-12-11T13:54:40.000Z</pubTime>
-        
-        <tag>html</tag>
-         
-        <tag>css</tag>
-         
-        <tag>javascript</tag>
-         
-        <tag>node</tag>
-         
-        <tag>react</tag>
-         
-        <tag>redux</tag>
-         
-        <tag>git</tag>
-         
-        <tag>express</tag>
-         
-        <tag>bootstrap</tag>
-         
-        <tag>less</tag>
-         
-        <tag>npm</tag>
-         
-        <tag>hexo</tag>
-         
-        <tag>github</tag>
-         
-         
-           
-             
-              <breadCrumb title="test" url="http://yoursite.com/categories/test/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/12/14/JS%E4%B8%AD%E7%9A%84DOM%E6%98%A0%E5%B0%84%E3%80%81%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81/</loc>
-    <lastmod>2016-12-14T06:10:16.000Z</lastmod>
+    <lastmod>2016-12-14T07:29:14.000Z</lastmod>
     <data>
         <display>
         <title>JS中的DOM映射、重绘和回流</title>

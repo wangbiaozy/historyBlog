@@ -86,22 +86,16 @@
 
 
 
-<meta name="description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。 
-　　 
-为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写在行内)">
+<meta name="description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS中的DOM映射、重绘和回流">
 <meta property="og:url" content="http://yoursite.com/2016/12/14/JS中的DOM映射、重绘和回流/index.html">
 <meta property="og:site_name" content="王彪的个人博客">
-<meta property="og:description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。 
-　　 
-为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写在行内)">
-<meta property="og:updated_time" content="2016-12-14T06:10:16.000Z">
+<meta property="og:description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。">
+<meta property="og:updated_time" content="2016-12-14T07:29:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS中的DOM映射、重绘和回流">
-<meta name="twitter:description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。 
-　　 
-为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写在行内)">
+<meta name="twitter:description" content="先来简单了解下什么是DOM映射、重绘和回流–&amp;gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。">
 
 
 
@@ -417,8 +411,9 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>　　先来简单了解下什么是DOM映射、重绘和回流–&gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。 
-　　 </p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>　　先来简单了解下什么是DOM映射、重绘和回流–&gt;DOM映射：通过DOM方式获取来的DOM对象和网页内元素的一一对应关系；DOM重绘：页面内元素样式等的改变；DOM回流：页面内元素的增加和删除或者位置的改变都会引起DOM回流。 </p>
+<a id="more"></a>
+<p>　　 </p>
 <h4 id="为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中-这里为了方便所以将样式写在行内"><a href="#为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中-这里为了方便所以将样式写在行内" class="headerlink" title="为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写在行内)"></a>为了方便理解，我们来看一个简单的小例子，假设页面中有如下一个ul标签，我们需要把ul下的每一个li重新排序再添加到页面中(这里为了方便所以将样式写在行内)</h4><pre><code>&lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;demo&lt;/title&gt;
@@ -552,22 +547,6 @@ frg = null; //添加之后这个容器就没用了 记得丢掉
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/12/11/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
 
       
       
@@ -654,7 +633,7 @@ frg = null; //添加之后这个容器就没用了 记得丢掉
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -662,7 +641,7 @@ frg = null; //添加之后这个容器就没用了 记得丢掉
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -671,7 +650,7 @@ frg = null; //添加之后这个容器就没用了 记得丢掉
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
