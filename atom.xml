@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-14T07:29:14.000Z</updated>
+  <updated>2016-12-21T20:00:32.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>时间字符串格式化</title>
+    <link href="http://yoursite.com/2016/12/22/%E6%97%B6%E9%97%B4%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/"/>
+    <id>http://yoursite.com/2016/12/22/时间字符串格式化/</id>
+    <published>2016-12-21T18:44:55.000Z</published>
+    <updated>2016-12-21T20:00:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><pre><code>利用正则在String原型上添加一个方法：把指定时间格式的字符串换成我们想要的各种格式,例如我们有时需要把“2016-12-22 03:10:00”或者“2016/12/22 03:10:00”等时间字符串换成我们想要的2016年12月22日 3时10分0秒等形式展示出来，那么利用正则以及String中的replace方法来实现是个简便而又实用的方法
+</code></pre><a id="more"></a>
+<h4 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h4><pre><code>String.prototype.myFormatTime = function (){
+    var reg = /^(\d{4})(?:-|\/|\.|:)(\d{1,2})(?:-|\/|\.|:)(\d{1,2})(?:\s+)(\d{1,2})(?:-|\/|\.|:)(\d{1,2})(?:-|\/|\.|:)(\d{1,2})$/g;
+    var arr = [];
+    this.replace(reg, function (){
+        arr = ([].slice.call(arguments)).slice(1,7);
+    });
+    var format = arguments[0] || &quot;{0}年{1}月{2}日 {3}:{4}:{5}&quot;;
+    return format.replace(/{(\d+)}/g,function (){
+        var val = arr[arguments[1]];
+        return val.length === 1 ? &quot;0&quot; + val : val;
+    });
+}    
+</code></pre><h4 id="让我们来试一下这个方法"><a href="#让我们来试一下这个方法" class="headerlink" title="让我们来试一下这个方法"></a>让我们来试一下这个方法</h4><pre><code>var str1 = &quot;2016-12-22 03:29:35&quot;,str2 = &quot;2016/12/22 3:29:35&quot;,str3 = &quot;2016.12.22 3.29.35&quot;;
+console.log(str1.myFormatTime(&quot;{0}年{1}月{2}日 {3}时{4}分{5}秒&quot;)); //这里输出的是2016年12月22日 03时29分35秒
+console.log(str2.myFormatTime(&quot;{1}月{2}日 {3}时{4}分&quot;)); //这里输出的是12月22日 03时29分
+console.log(str3.myFormatTime(&quot;{1}月{2}日 {3}时{4}分&quot;)); //这里输出的同样是12月22日 03时29分
+</code></pre><h4 id="需要注意的是当replace方法的第二个参数是一个函数的时候，函数中arguments这个类数组中存放了哪几项，以及如何把我们所需要的项提取到一个数组中。"><a href="#需要注意的是当replace方法的第二个参数是一个函数的时候，函数中arguments这个类数组中存放了哪几项，以及如何把我们所需要的项提取到一个数组中。" class="headerlink" title="需要注意的是当replace方法的第二个参数是一个函数的时候，函数中arguments这个类数组中存放了哪几项，以及如何把我们所需要的项提取到一个数组中。"></a>需要注意的是当replace方法的第二个参数是一个函数的时候，函数中arguments这个类数组中存放了哪几项，以及如何把我们所需要的项提取到一个数组中。</h4><pre><code>this.replace(reg, function (){
+        console.log(arguments);//输出arguments为[&quot;2016-12-22 03:29:35&quot;, &quot;2016&quot;, &quot;12&quot;, &quot;22&quot;, &quot;03&quot;, &quot;29&quot;, &quot;35&quot;, 0, &quot;2016-12-22 03:29:35&quot;]，可以看到第2到第7项是我们所需要的，也就是索引1到索引6的项
+        arr = ([].slice.call(arguments)).slice(1,7);//借用数组中的slice方法将我们需要的项复制到一个新的数组中，这里需要注意slice传两个参数时是从索引1开始到索引7但是不包含索引7，这里千万不要写成6
+    });
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;利用正则在String原型上添加一个方法：把指定时间格式的字符串换成我们想要的各种格式,例如我们有时需要把“2016-12-22 03:10:00”或者“2016/12/22 03:10:00”等时间字符串换成我们想要的2016年12月22日 3时10分0秒等形式展示出来，那么利用正则以及String中的replace方法来实现是个简便而又实用的方法
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="正则" scheme="http://yoursite.com/tags/%E6%AD%A3%E5%88%99/"/>
+    
+  </entry>
   
   <entry>
     <title>JS中的DOM映射、重绘和回流</title>
