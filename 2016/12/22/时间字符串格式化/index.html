@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/22/时间字符串格式化/index.html">
 <meta property="og:site_name" content="王彪的个人博客">
 <meta property="og:description" content="利用正则在String原型上添加一个方法：把指定时间格式的字符串换成我们想要的各种格式,例如我们有时需要把“2016-12-22 03:10:00”或者“2016/12/22 03:10:00”等时间字符串换成我们想要的2016年12月22日 3时10分0秒等形式展示出来，那么利用正则以及String中的replace方法来实现是个简便而又实用的方法">
-<meta property="og:updated_time" content="2016-12-21T20:00:32.000Z">
+<meta property="og:updated_time" content="2016-12-21T20:03:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="时间字符串格式化">
 <meta name="twitter:description" content="利用正则在String原型上添加一个方法：把指定时间格式的字符串换成我们想要的各种格式,例如我们有时需要把“2016-12-22 03:10:00”或者“2016/12/22 03:10:00”等时间字符串换成我们想要的2016年12月22日 3时10分0秒等形式展示出来，那么利用正则以及String中的replace方法来实现是个简便而又实用的方法">
@@ -411,8 +411,8 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><pre><code>利用正则在String原型上添加一个方法：把指定时间格式的字符串换成我们想要的各种格式,例如我们有时需要把“2016-12-22 03:10:00”或者“2016/12/22 03:10:00”等时间字符串换成我们想要的2016年12月22日 3时10分0秒等形式展示出来，那么利用正则以及String中的replace方法来实现是个简便而又实用的方法
-</code></pre><a id="more"></a>
+        <script src="/assets/js/APlayer.min.js"> </script><p>　　利用正则在String原型上添加一个方法：把指定时间格式的字符串换成我们想要的各种格式,例如我们有时需要把“2016-12-22 03:10:00”或者“2016/12/22 03:10:00”等时间字符串换成我们想要的2016年12月22日 3时10分0秒等形式展示出来，那么利用正则以及String中的replace方法来实现是个简便而又实用的方法</p>
+<a id="more"></a>
 <h4 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h4><pre><code>String.prototype.myFormatTime = function (){
     var reg = /^(\d{4})(?:-|\/|\.|:)(\d{1,2})(?:-|\/|\.|:)(\d{1,2})(?:\s+)(\d{1,2})(?:-|\/|\.|:)(\d{1,2})(?:-|\/|\.|:)(\d{1,2})$/g;
     var arr = [];
