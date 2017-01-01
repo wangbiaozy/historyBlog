@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-01T02:19:50.000Z</updated>
+  <updated>2017-01-01T17:31:15.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,20 +20,22 @@
     <link href="http://yoursite.com/2016/12/31/git%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4/"/>
     <id>http://yoursite.com/2016/12/31/git的使用与常用linux命令/</id>
     <published>2016-12-31T15:49:55.000Z</published>
-    <updated>2017-01-01T02:19:50.000Z</updated>
+    <updated>2017-01-01T17:31:15.000Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>　　为了告别手动方式管理Linux代码,并且符合开源和免费,Linus花了两周时间自己用 C 写了一个分布式版本控制系统，这就是Git。<br>　　Git迅速成为最流行的分布式版本控制系统，尤其是 2008 年 GitHub 网站上线了，它为开源项目 免费提供Git存储 ，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。</p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>　　为了告别手动方式管理Linux代码,并且符合开源和免费,Linus花了两周时间自己用 C 写了一个分布式版本控制系统，这就是Git。<br>　　Git迅速成为最流行的分布式版本控制系统，尤其是 2008 年 GitHub 网站上线了，它为开源项目 免费提供Git存储 ，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。<br>　　<br><img src="http://oi0f7tpni.bkt.clouddn.com/u=783377470,1728660278&amp;fm=214&amp;gp=0.jpg" alt="gitLogo">　　</p>
 <a id="more"></a>
 <h3 id="1-git的安装"><a href="#1-git的安装" class="headerlink" title="1. git的安装"></a>1. git的安装</h3><ul>
-<li>windows下的安装<br>下载地址: <a href="http://git-scm.com" target="_blank" rel="external">http://git-scm.com</a><blockquote>
+<li>windows下的安装<br>下载地址: <a href="http://git-scm.com" target="_blank" rel="external">http://git-scm.com</a></li>
+</ul>
+<blockquote>
 <p>windows安装过程中记得选择在cmd下使用linux命令</p>
 </blockquote>
-</li>
-<li>mac下安装<br>下载HomeBrew: <a href="http://brew.sh" target="_blank" rel="external">http://brew.sh</a><br>拷贝对应脚本到终端下安装HomeBrew<br>然后在终端执行brew install git命令安装git<blockquote>
+<ul>
+<li>mac下安装<br>下载HomeBrew: <a href="http://brew.sh" target="_blank" rel="external">http://brew.sh</a><br>拷贝对应脚本到终端下安装HomeBrew　然后在终端执行brew install git命令安装git</li>
+</ul>
+<blockquote>
 <p>安装xcode会默认下载git</p>
 </blockquote>
-</li>
-</ul>
 <h3 id="2-配置git用户和邮箱"><a href="#2-配置git用户和邮箱" class="headerlink" title="2. 配置git用户和邮箱"></a>2. 配置git用户和邮箱</h3><pre><code>$ git config --global user.name &quot;你的github用户名&quot;
 $ git config --global user.email &quot;你的github邮箱&quot;
 </code></pre><blockquote>
@@ -65,11 +67,54 @@ $ vi 文件名  //修改文件 i键进入编辑状态 esc退出 :wq保存并退�
 <pre><code>$ git commit -m &apos;注释内容&apos;    
 </code></pre><h4 id="4-3-历史区"><a href="#4-3-历史区" class="headerlink" title="4.3 历史区"></a>4.3 历史区</h4><p>历史区的内容只要电脑不爆炸、不手动删除.git文件，内容永远不会丢失<br>查看历史状态及提交版本号：</p>
 <pre><code>$ git log / $ git log --oneline   //在命令末尾添加--oneline显示记录为一行    
-</code></pre>]]></content>
+</code></pre><p>一步提交到历史区：</p>
+<pre><code>$ git commit -a -m&apos;注释内容&apos; //如果当前文件是首次提交则不支持此命令，需要逐步提交
+</code></pre><blockquote>
+<p>有的时候我们希望提交时合并到上一次的提交: <code>$ git commit --amend</code>    </p>
+</blockquote>
+<p>在历史区中查询关键字：</p>
+<pre><code>$ git log --grep/--author=提交者名字        
+</code></pre><h3 id="5-不同区的代码比较"><a href="#5-不同区的代码比较" class="headerlink" title="5. 不同区的代码比较"></a>5. 不同区的代码比较</h3><h4 id="5-1-工作区和暂存区"><a href="#5-1-工作区和暂存区" class="headerlink" title="5.1 工作区和暂存区"></a>5.1 工作区和暂存区</h4><pre><code>$ git diff
+</code></pre><h4 id="5-2-暂存区和历史区"><a href="#5-2-暂存区和历史区" class="headerlink" title="5.2 暂存区和历史区"></a>5.2 暂存区和历史区</h4><pre><code>$ git diff --cached
+</code></pre><h4 id="5-3-工作区和历史区"><a href="#5-3-工作区和历史区" class="headerlink" title="5.3 工作区和历史区"></a>5.3 工作区和历史区</h4><pre><code>$ git diff 分支的名字
+</code></pre><h3 id="6-撤销"><a href="#6-撤销" class="headerlink" title="6. 撤销"></a>6. 撤销</h3><h4 id="6-1-撤销回暂存区中新加的内容（git-add的内容）"><a href="#6-1-撤销回暂存区中新加的内容（git-add的内容）" class="headerlink" title="6.1 撤销回暂存区中新加的内容（git add的内容）"></a>6.1 撤销回暂存区中新加的内容（git add的内容）</h4><pre><code>$ git reset HEAD 文件名    
+</code></pre><h4 id="6-2-撤回文件"><a href="#6-2-撤回文件" class="headerlink" title="6.2 撤回文件"></a>6.2 撤回文件</h4><p>先从暂存区撤销，暂存区无内容，从历史区撤销</p>
+<pre><code>$ git checkout 文件名
+</code></pre><h3 id="7-删除"><a href="#7-删除" class="headerlink" title="7. 删除"></a>7. 删除</h3><h4 id="7-1-删除暂存区和工作区"><a href="#7-1-删除暂存区和工作区" class="headerlink" title="7.1 删除暂存区和工作区"></a>7.1 删除暂存区和工作区</h4><p>删除暂存区中的内容,并且保证工作区中的内容已经不存在</p>
+<pre><code>$ git rm 文件名  //若本地文件存在则不能删除，需要通过-f参数删除        
+</code></pre><h4 id="7-2-仅删除暂存区"><a href="#7-2-仅删除暂存区" class="headerlink" title="7.2 仅删除暂存区"></a>7.2 仅删除暂存区</h4><pre><code>$ git rm --cached 文件名
+</code></pre><h3 id="8-恢复（版本回退）"><a href="#8-恢复（版本回退）" class="headerlink" title="8. 恢复（版本回退）"></a>8. 恢复（版本回退）</h3><h4 id="8-1-版本回退（历史区→工作区）"><a href="#8-1-版本回退（历史区→工作区）" class="headerlink" title="8.1 版本回退（历史区→工作区）"></a>8.1 版本回退（历史区→工作区）</h4><pre><code>$ git reset --hard 版本号
+$ git reset --hard HEAD~3  // HEAD^去上一级    
+</code></pre><h4 id="8-2-查看操作历史"><a href="#8-2-查看操作历史" class="headerlink" title="8.2 查看操作历史"></a>8.2 查看操作历史</h4><pre><code>$ git log  //查看当前版本之前的内容
+$ git reflog  //查看所有操作历史        
+</code></pre><h3 id="9-分支"><a href="#9-分支" class="headerlink" title="9. 分支"></a>9. 分支</h3><p>主要是写代码时，不会影响主代码</p>
+<h4 id="9-1-创建分支"><a href="#9-1-创建分支" class="headerlink" title="9.1 创建分支"></a>9.1 创建分支</h4><pre><code>$ git branch 分支名字    
+</code></pre><h4 id="9-2-查看分支"><a href="#9-2-查看分支" class="headerlink" title="9.2 查看分支"></a>9.2 查看分支</h4><pre><code>$ git branch
+</code></pre><h4 id="9-3-进入到分支（切换分支）"><a href="#9-3-进入到分支（切换分支）" class="headerlink" title="9.3 进入到分支（切换分支）"></a>9.3 进入到分支（切换分支）</h4><pre><code>$ git checkout 分支名
+</code></pre><h4 id="9-4-删除分支"><a href="#9-4-删除分支" class="headerlink" title="9.4 删除分支"></a>9.4 删除分支</h4><pre><code>$ git branch -D 分支名
+</code></pre><h4 id="9-5-创建并切入分支"><a href="#9-5-创建并切入分支" class="headerlink" title="9.5 创建并切入分支"></a>9.5 创建并切入分支</h4><pre><code>$ git checkout -b dev  //创建并切入到dev分支上
+</code></pre><h4 id="9-6-合并分支"><a href="#9-6-合并分支" class="headerlink" title="9.6 合并分支"></a>9.6 合并分支</h4><pre><code>$ git merge 被合并的分支名
+</code></pre><blockquote>
+<p>每个人都会拥有一条分支，开发自己的代码，自己的代码开发完成后提交到自己的历史区，主分支来进行合并分支    ，注意区分主分支</p>
+</blockquote>
+<h4 id="9-7-合并分支时产生冲突的原因"><a href="#9-7-合并分支时产生冲突的原因" class="headerlink" title="9.7 合并分支时产生冲突的原因"></a>9.7 合并分支时产生冲突的原因</h4><p>两个人同时改变了同一个文件。git不知道谁是对的，要让自己裁决，裁决好后再次提交。只能手动合并。</p>
+<h3 id="10-将本地内容推送到远程仓库"><a href="#10-将本地内容推送到远程仓库" class="headerlink" title="10. 将本地内容推送到远程仓库"></a>10. 将本地内容推送到远程仓库</h3><h4 id="10-1-关联远程仓库"><a href="#10-1-关联远程仓库" class="headerlink" title="10.1 关联远程仓库"></a>10.1 关联远程仓库</h4><pre><code>$ git remote add origin（地址名） 远程仓库地址
+</code></pre><h4 id="10-2-移除关联的远程仓库"><a href="#10-2-移除关联的远程仓库" class="headerlink" title="10.2 移除关联的远程仓库"></a>10.2 移除关联的远程仓库</h4><pre><code>$ git remote rm origin（地址名）
+</code></pre><h4 id="10-3-查看关联的远程仓库信息"><a href="#10-3-查看关联的远程仓库信息" class="headerlink" title="10.3 查看关联的远程仓库信息"></a>10.3 查看关联的远程仓库信息</h4><p>查看仓库名字</p>
+<pre><code>$ git remote     
+</code></pre><p>查看仓库地址</p>
+<pre><code>$ git remote -v
+</code></pre><h4 id="10-4-推送到远程仓库"><a href="#10-4-推送到远程仓库" class="headerlink" title="10.4 推送到远程仓库"></a>10.4 推送到远程仓库</h4><p>要保证即将被推送到远程的内容已经添加到历史区，即已经执行过<code>$ git add .</code> &amp;&amp; <code>git commit -m&quot;&quot;</code>，否则无法推送到远程仓库</p>
+<pre><code>$ git push origin master //可以选择加不加-u(upstream)参数 首次推送如果加-u则以后每次拉取和推送直接执行git pull/git push即可
+</code></pre><blockquote>
+<p>如果本地和线上版本不一致，则需先进行拉取，如果拉取后有冲突，需要手动解决冲突，然后再推送    </p>
+</blockquote>
+<p> 强制覆盖远程仓库内容：<code>$ git push origin master -f</code>（谨慎使用此命令…后果很严重，你懂的…）    </p>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;　　为了告别手动方式管理Linux代码,并且符合开源和免费,Linus花了两周时间自己用 C 写了一个分布式版本控制系统，这就是Git。&lt;br&gt;　　Git迅速成为最流行的分布式版本控制系统，尤其是 2008 年 GitHub 网站上线了，它为开源项目 免费提供Git存储 ，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。&lt;/p&gt;
+      &lt;p&gt;　　为了告别手动方式管理Linux代码,并且符合开源和免费,Linus花了两周时间自己用 C 写了一个分布式版本控制系统，这就是Git。&lt;br&gt;　　Git迅速成为最流行的分布式版本控制系统，尤其是 2008 年 GitHub 网站上线了，它为开源项目 免费提供Git存储 ，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。&lt;br&gt;　　&lt;br&gt;&lt;img src=&quot;http://oi0f7tpni.bkt.clouddn.com/u=783377470,1728660278&amp;amp;fm=214&amp;amp;gp=0.jpg&quot; alt=&quot;gitLogo&quot;&gt;　　&lt;/p&gt;
     
     </summary>
     
