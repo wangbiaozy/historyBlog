@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-21T20:03:42.000Z</updated>
+  <updated>2017-01-01T02:19:50.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git的使用与常用linux命令</title>
+    <link href="http://yoursite.com/2016/12/31/git%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2016/12/31/git的使用与常用linux命令/</id>
+    <published>2016-12-31T15:49:55.000Z</published>
+    <updated>2017-01-01T02:19:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>　　为了告别手动方式管理Linux代码,并且符合开源和免费,Linus花了两周时间自己用 C 写了一个分布式版本控制系统，这就是Git。<br>　　Git迅速成为最流行的分布式版本控制系统，尤其是 2008 年 GitHub 网站上线了，它为开源项目 免费提供Git存储 ，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。</p>
+<a id="more"></a>
+<h3 id="1-git的安装"><a href="#1-git的安装" class="headerlink" title="1. git的安装"></a>1. git的安装</h3><ul>
+<li>windows下的安装<br>下载地址: <a href="http://git-scm.com" target="_blank" rel="external">http://git-scm.com</a><blockquote>
+<p>windows安装过程中记得选择在cmd下使用linux命令</p>
+</blockquote>
+</li>
+<li>mac下安装<br>下载HomeBrew: <a href="http://brew.sh" target="_blank" rel="external">http://brew.sh</a><br>拷贝对应脚本到终端下安装HomeBrew<br>然后在终端执行brew install git命令安装git<blockquote>
+<p>安装xcode会默认下载git</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-配置git用户和邮箱"><a href="#2-配置git用户和邮箱" class="headerlink" title="2. 配置git用户和邮箱"></a>2. 配置git用户和邮箱</h3><pre><code>$ git config --global user.name &quot;你的github用户名&quot;
+$ git config --global user.email &quot;你的github邮箱&quot;
+</code></pre><blockquote>
+<p>不配置用户名和邮箱的话无法提交，因为git不知道你是谁    </p>
+</blockquote>
+<p>查看配置</p>
+<pre><code>$ git config --global user.name
+$ git config --global user.email
+</code></pre><p>查看所有配置</p>
+<pre><code>$git config --list    
+</code></pre><h3 id="3-初始化git"><a href="#3-初始化git" class="headerlink" title="3. 初始化git"></a>3. 初始化git</h3><ul>
+<li>先创建一个空目录，可以直接手动创建，也可以在终端或命令行中输入mkdir 文件夹的名字 来创建，然后进入此目录，手动进入或在终端或命令行中输入cd（change directory）文件夹的名字，进入此目录（删除文件夹使用<code>$ rm -rf 文件夹名字</code>）</li>
+<li>windows在当前文件夹右键点击Git Bash Here打开命令行，mac在当前文件选择在此打开终端窗口，或者直接在cmd命令行或终端里输入 git init 来初始化git，告诉git当前目录归它所管理</li>
+</ul>
+<blockquote>
+<p>通过ls -al 命令查看当前目录下的所有文件</p>
+</blockquote>
+<h3 id="4-git中的三个区"><a href="#4-git中的三个区" class="headerlink" title="4. git中的三个区"></a>4. git中的三个区</h3><p><a href="http://card.mugeda.com/campaigns/56d2c4a0a3664e3308000407/20160304090522/56d97729a3664e9c65000047/index.html" target="_blank" rel="external">git的工作流</a></p>
+<h4 id="4-1-工作区"><a href="#4-1-工作区" class="headerlink" title="4.1 工作区"></a>4.1 工作区</h4><p>通过git add 添加到暂存区</p>
+<pre><code>$ git add ./-a/文件名
+</code></pre><blockquote>
+<p>当前文件在命令行或终端里没有加入到暂存区是红色，加入后是绿色 可以通过<code>$ git status</code>命令查看；这里说几个常用的linux命令：</p>
+</blockquote>
+<pre><code>$ touch 文件名  //创建文件
+$ echo 内容 &gt;&gt; 1.txt  //一个大于号清空 创建 并写入 两个大于号追加
+$ cat 文件名  //查看文件
+$ vi 文件名  //修改文件 i键进入编辑状态 esc退出 :wq保存并退出  :q!强制退出
+</code></pre><h4 id="4-2-暂存区"><a href="#4-2-暂存区" class="headerlink" title="4.2 暂存区"></a>4.2 暂存区</h4><p>特点：过渡的作用，避免误操作，保护工作区和历史区，分支处理；<br>通过git commit添加到历史区</p>
+<pre><code>$ git commit -m &apos;注释内容&apos;    
+</code></pre><h4 id="4-3-历史区"><a href="#4-3-历史区" class="headerlink" title="4.3 历史区"></a>4.3 历史区</h4><p>历史区的内容只要电脑不爆炸、不手动删除.git文件，内容永远不会丢失<br>查看历史状态及提交版本号：</p>
+<pre><code>$ git log / $ git log --oneline   //在命令末尾添加--oneline显示记录为一行    
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　为了告别手动方式管理Linux代码,并且符合开源和免费,Linus花了两周时间自己用 C 写了一个分布式版本控制系统，这就是Git。&lt;br&gt;　　Git迅速成为最流行的分布式版本控制系统，尤其是 2008 年 GitHub 网站上线了，它为开源项目 免费提供Git存储 ，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Git" scheme="http://yoursite.com/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>时间字符串格式化</title>
